@@ -28,8 +28,7 @@ const Login = () => {
       <h1>Inicia sesión</h1>
 
       <section>
-        <h2>Hola, bienvenido de nuevo</h2>
-        <p>johnd, m38rmF$</p>
+        <h2>¡Bienvenido a Lumina!</h2>
         <form onSubmit={handleLogin}>
           <div>
             <label>Nombre de usuario:</label>

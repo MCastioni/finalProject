@@ -24,9 +24,7 @@ const Register = () => {
       password
     }
 
-    console.log(newUser)
     setSuccess("Usuario registrado con éxito")
-
     setUsername("")
     setEmail("")
     setPassword("")
@@ -41,10 +39,10 @@ const Register = () => {
         <form onSubmit={handleSubmit}>
           <div>
             <label>Username:</label>
-            <input
-              type="text"
-              onChange={(e) => setUsername(e.target.value)}
-              value={username}
+            <input 
+            type="text" 
+            onChange={(e) => setUsername(e.target.value)} 
+            value={username}
             />
           </div>
           <div>
