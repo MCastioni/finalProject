@@ -2,8 +2,11 @@ import { useEffect, useState } from "react"
 import { Layout } from "../components/Layout"
 import { useAuth } from "../context/UserContext"
 
+
 const Home = () => {
+  const [allProducts, setAllProducts] = useState([])
   const [products, setProducts] = useState([])
+  const [searchValue, setSearchValue] = useState("")
   const [showPopup, setShowPopup] = useState(null)
   const [productToEdit, setProductToEdit] = useState(null)
   const [titleEdit, setTitleEdit] = useState("")
@@ -18,13 +21,30 @@ const Home = () => {
   const fetchingProducts = async () => {
     const response = await fetch("https://fakestoreapi.com/products", { method: "GET" })
     const data = await response.json()
+    setAllProducts(data)
     setProducts(data)
   }
+
 
   // El array vacío (dependencias) espera a que ejecute el return del jsx. Si tiene algo, useEffect se va a ejecutar cada vez que se modifique lo que este dentro de la dependencia.
   useEffect(() => {
     fetchingProducts()
   }, [])
+
+  const onChangeinput = (e) => {
+    const value = e.target.value
+    setSearchValue(value)
+
+    if (!value.trim()) {
+      setProducts(allProducts)
+    } else {
+      const filtered = allProducts.filter(product =>
+        product.title.toLowerCase().includes(value.toLowerCase())
+      )
+      setProducts(filtered)
+    }
+  }
+
 
   const handleDelete = async (id) => {
     const response = await fetch(`https://fakestoreapi.com/products/${id}`, { method: "DELETE" })
@@ -45,7 +65,6 @@ const Home = () => {
     setImageEdit(product.image)
   }
 
-  // petición al backend mediante fetch para modificar-> método PATCH / PUT https://fakeproductapi.com/products
   const handleUpdate = async (e) => {
     e.preventDefault()
 
@@ -75,7 +94,6 @@ const Home = () => {
               ? data
               : product
           ))
-        // fetchingProducts()
       }
       setShowPopup(false)
     } catch (error) {
@@ -111,8 +129,8 @@ const Home = () => {
       <section>
         <h2>Nuestros productos</h2>
         <p>Elegí entre nuestras categorías más populares.</p>
-
-
+        <input onChange={onChangeinput} type="text" placeholder="Búsqueda..." />
+        
         {
           showPopup && <section className="popup-edit">
             <h2>Editando producto.</h2>
