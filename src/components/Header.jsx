@@ -9,15 +9,16 @@ const Header = () => {
   }
 
   return (
-    <header style={{ backgroundColor: "lightblue" }}>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Logo-Test.png" alt="imagen de logo" />
+    <header>
+      <img src="Logo.jpg" alt="imagen de logo" />
       <nav>
         <ul>
-          {/* Cambiar elementos a por componentes Link de react-router-dom */}
+          {/* Cambiar elementos a  por componentes Link de react-router-dom */}
           {
             user && <>
-              <li><Link to="/">Inicio</Link></li>
-              <li><Link to="/dashboard">Dashboard</Link></li>
+              <li><Link to="/Home">Inicio</Link></li>
+              <li><Link to="/Login">Login</Link></li>
+              <li><Link to="/Dashboard">Dashboard</Link></li>
               <button onClick={handleLogout}>Cerrar sesión</button>
             </>
           }

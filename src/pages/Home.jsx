@@ -51,7 +51,6 @@ const Home = () => {
 
     if (response.ok) {
       setProducts(prevProduct => prevProduct.filter((product) => product.id != id))
-      // fetchingProducts()
     }
   }
 
