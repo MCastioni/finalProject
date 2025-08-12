@@ -6,6 +6,7 @@ import { Register } from "../pages/Register"
 import { NotFound } from "../pages/NotFound"
 import { PrivateRoute } from "../components/PrivateRoute"
 import { AboutUs } from "../pages/AboutUs"
+
 const RouterApp = () => {
   return (
     <BrowserRouter>
