@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { Layout } from "../components/Layout"
+import { useAuth } from "../context/UserContext"
+import { useNavigate } from "react-router-dom"
 
 const Register = () => {
   const [username, setUsername] = useState("")
@@ -7,8 +9,11 @@ const Register = () => {
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
   const [success, setSuccess] = useState("")
+  const { register } = useAuth() 
 
-  const handleSubmit = (e) => {
+  const nagivate = useNavigate()
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setError("")
     setSuccess("")
@@ -27,6 +32,15 @@ const Register = () => {
       username,
       email,
       password
+    }
+
+    const isRegister = await register(username, password, email)
+    if (isRegister) {
+      alert("usuario creado")
+      setUsername("")
+      setPassword("")
+      setEmail("")
+      nagivate("/")
     }
 
     setSuccess("Usuario registrado con éxito")
