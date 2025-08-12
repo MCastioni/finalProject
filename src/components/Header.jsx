@@ -5,7 +5,7 @@ const Header = () => {
   const { user, logout } = useAuth()
 
   const handleLogout = () => {
-    logout()
+  logout()
   }
 
   return (
@@ -15,8 +15,7 @@ const Header = () => {
         <ul>
           {
             user && <>
-              <li><Link to="/Home">Inicio</Link></li>
-              <li><Link to="/Login">Login</Link></li>
+              <li><Link to="/">Home</Link></li>
               <li><Link to="/Dashboard">Dashboard</Link></li>
               <button onClick={handleLogout}>Cerrar sesión</button>
             </>

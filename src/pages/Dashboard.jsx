@@ -24,6 +24,16 @@ const Dashboard = () => {
       return
     }
 
+    if (price <= 0) {
+      setError("El precio no puede ser negativo.")
+      return
+    }
+
+    if (description.length < 10) {
+      setError("La descripción debe tener al menos 10 caractéres.")
+      return
+    }
+
     const newProduct = {
       id: crypto.randomUUID(),
       title: name,
@@ -33,7 +43,6 @@ const Dashboard = () => {
       image: ""
     }
 
-    // petición al backend mediante fetch -> método POST https://fakeproductapi.com/products
     const response = await fetch("https://fakestoreapi.com/products", {
       method: "POST",
       headers: {

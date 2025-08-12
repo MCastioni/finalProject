@@ -2,11 +2,10 @@ import { useEffect, useState } from "react"
 import { Layout } from "../components/Layout"
 import { useAuth } from "../context/UserContext"
 
-
 const Home = () => {
   const [allProducts, setAllProducts] = useState([])
   const [products, setProducts] = useState([])
-  const [searchValue, setSearchValue] = useState("")
+  const [value, setValue] = useState("")
   const [showPopup, setShowPopup] = useState(null)
   const [productToEdit, setProductToEdit] = useState(null)
   const [titleEdit, setTitleEdit] = useState("")
@@ -15,7 +14,6 @@ const Home = () => {
   const [categoryEdit, setCategoryEdit] = useState("")
   const [imageEdit, setImageEdit] = useState("")
 
-  // simulando existencia del usuario, proximamente este estado será global
   const { user } = useAuth()
 
   const fetchingProducts = async () => {
@@ -25,15 +23,13 @@ const Home = () => {
     setProducts(data)
   }
 
-
-  // El array vacío (dependencias) espera a que ejecute el return del jsx. Si tiene algo, useEffect se va a ejecutar cada vez que se modifique lo que este dentro de la dependencia.
   useEffect(() => {
     fetchingProducts()
   }, [])
 
   const onChangeinput = (e) => {
     const value = e.target.value
-    setSearchValue(value)
+    setValue(value)
 
     if (!value.trim()) {
       setProducts(allProducts)
@@ -44,7 +40,6 @@ const Home = () => {
       setProducts(filtered)
     }
   }
-
 
   const handleDelete = async (id) => {
     const response = await fetch(`https://fakestoreapi.com/products/${id}`, { method: "DELETE" })
@@ -84,7 +79,7 @@ const Home = () => {
         },
         body: JSON.stringify(updatedProduct)
       })
-
+      
       if (response.ok) {
         const data = await response.json()
         setProducts(prevProduct =>
@@ -132,8 +127,7 @@ const Home = () => {
         
         {
           showPopup && <section className="popup-edit">
-            <h2>Editando producto.</h2>
-            <button onClick={() => setShowPopup(null)}>Cerrar</button>
+            <h2>Editando producto</h2>
             <form onSubmit={handleUpdate}>
               <input
                 type="text"
@@ -164,6 +158,7 @@ const Home = () => {
                 value={imageEdit}
                 onChange={(e) => setImageEdit(e.target.value)}
               />
+              <button onClick={() => setShowPopup(null)}>Cerrar</button>
               <button>Actualizar</button>
             </form>
           </section>
@@ -184,6 +179,13 @@ const Home = () => {
                 </div>
               }
             </div>)
+          }
+          {
+            !products.lenght && (
+            <div><h3>Ups, parece que hubo un problema</h3>
+            <p id="errorMessage"> Tu producto "{value}" no existe o no es correcto.</p>
+            <p id="errorMessage"> Por favor, intenta nuevamente.</p></div>
+            )
           }
         </div>
       </section>

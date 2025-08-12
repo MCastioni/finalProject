@@ -21,6 +21,9 @@ const Login = () => {
       setPassword("")
       nagivate("/")
     }
+    else {
+      alert("Nombre de usuario o contraseña incorrectos")
+    }
   }
 
   return (

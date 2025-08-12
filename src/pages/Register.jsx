@@ -18,6 +18,11 @@ const Register = () => {
       return
     }
 
+    if (password.length <= 4) {
+      setError("La contraseña debe contener más de cuatro caractéres")
+      return
+    }
+
     const newUser = {
       username,
       email,
@@ -65,10 +70,10 @@ const Register = () => {
         </form>
 
         {
-          error && <p style={{ color: "red" }}>{error}</p>
+          error && <p id="errorMessage">{error}</p>
         }
         {
-          success && <p style={{ color: "green" }}>{success}</p>
+          success && <p id="errorMessage">{success}</p>
         }
       </section>
     </Layout>

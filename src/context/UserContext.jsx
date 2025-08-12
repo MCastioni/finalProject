@@ -6,7 +6,6 @@ const UserProvider = (props) => {
   const [user, setUser] = useState(null)
 
   const login = async (username, password) => {
-    // realizar una petición al backend 
     const response = await fetch("https://fakestoreapi.com/auth/login", {
       method: "POST",
       headers: {
@@ -21,6 +20,7 @@ const UserProvider = (props) => {
       return token
     } else {
       return false
+      
     }
   }
 
