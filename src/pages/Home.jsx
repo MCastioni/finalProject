@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Layout } from "../components/Layout"
 import { useAuth } from "../context/UserContext"
 
+
 const Home = () => {
   const [allProducts, setAllProducts] = useState([])
   const [products, setProducts] = useState([])

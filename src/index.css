@@ -1,0 +1,11 @@
+#headerLogo { 
+  width: 200px;
+}
+
+header { 
+  background-color: red;
+}
+
+#errorMessage { 
+  color:brown
+}
