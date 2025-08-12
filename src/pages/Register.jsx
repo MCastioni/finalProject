@@ -23,8 +23,8 @@ const Register = () => {
       return
     }
 
-    if (password.length <= 4) {
-      setError("La contraseña debe contener más de cuatro caractéres")
+    if (password.length < 4) {
+      setError("Contraseña corta. Usa 4 letras o más")
       return
     }
 
@@ -34,7 +34,7 @@ const Register = () => {
       password
     }
 
-    const isRegister = await register(username, password, email)
+    const isRegister = await register({username: username, password: password, email: email})
     if (isRegister) {
       alert("usuario creado")
       setUsername("")
@@ -43,7 +43,7 @@ const Register = () => {
       nagivate("/")
     }
 
-    setSuccess("Usuario registrado con éxito")
+    setSuccess("")
     setUsername("")
     setEmail("")
     setPassword("")
@@ -51,13 +51,14 @@ const Register = () => {
 
   return (
     <Layout>
-      <h1>Registrate</h1>
-
-      <section>
-        <h2>Hola, bienvenido</h2>
+      <h1 id="registerTitle">¡Únete a nuestra comunidad!</h1>
+      <div class="registerContainer">
+      <section id="registerCard">
+        <h2 id="registerCardTitle" > Crea tu cuenta LUMINA </h2>
         <form onSubmit={handleSubmit}>
           <div>
-            <label>Username:</label>
+            <label id="registerText">Username:</label>
+            <div></div>
             <input 
             type="text" 
             onChange={(e) => setUsername(e.target.value)} 
@@ -65,7 +66,8 @@ const Register = () => {
             />
           </div>
           <div>
-            <label>Correo electrónico:</label>
+            <label id="registerText">Correo electrónico:</label>
+            <div></div>
             <input
               type="email"
               onChange={(e) => setEmail(e.target.value)}
@@ -73,23 +75,22 @@ const Register = () => {
             />
           </div>
           <div>
-            <label>Contraseña:</label>
+            <label id="registerText">Contraseña:</label>
+            <div></div>
             <input
               type="password"
               onChange={(e) => setPassword(e.target.value)}
               value={password}
             />
           </div>
-          <button>Ingresar</button>
+          <button id="registerButton">Ingresar</button>
         </form>
 
         {
           error && <p id="errorMessage">{error}</p>
         }
-        {
-          success && <p id="errorMessage">{success}</p>
-        }
       </section>
+      </div>
     </Layout>
   )
 }

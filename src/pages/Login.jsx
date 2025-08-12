@@ -28,8 +28,8 @@ const Login = () => {
 
   return (
     <Layout>
-      <h1 id="loginTitle">¡Bienvenido a Lumina!</h1>
-      <div class="container">
+      <h1 id="loginTitle">¡Bienvenido de vuelta!</h1>
+      <div class="loginContainer">
       <section id="loginCard">
         <h2 id="loginCardTitle">Inicia sesion en LUMINA</h2>
         <p id="loginHeart">❤</p>
@@ -43,7 +43,7 @@ const Login = () => {
               value={username} />
           </div>
           <div>
-            <label id="loginText" >Contraseña:</label>
+            <label id="loginText"> Contraseña:</label>
             <div></div>
             <input
               type="password"

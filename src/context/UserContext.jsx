@@ -27,7 +27,7 @@ const UserProvider = (props) => {
     setUser(null)
   }
 
-  const register = async (username, email, password) => {
+  const register = async ({username, email, password}) => {
     console.log("haciendo Fetch")
     const response = await fetch ("https://fakestoreapi.com/users", {
       method: "POST",
@@ -35,7 +35,6 @@ const UserProvider = (props) => {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({ username, password, email })
-  
     })
 
     if (response.ok) {
