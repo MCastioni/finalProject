@@ -1,9 +1,61 @@
-#headerLogo { 
-  width: 200px;
+/* Header  */
+* {
+  margin: 0%;
+  padding: 0%;
+}
+header {
+  background-image: url(headerPhoto.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  height: 150px;
 }
 
-header { 
-  background-color: red;
+#headerText {
+  font-family: "Barriecito", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  font-size: 50px;
+  text-align: center;
+}
+#headerNav {
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+#headerMenu { 
+  Margin: 10px;
+  display: flex; 
+  gap: 50px;
+  list-style-type: none;
+  font-family: "Rakkas";
+  font-weight: 400;
+  font-style: normal;
+}
+
+#headerListItem a {
+  text-decoration: none;
+  color: rgb(92, 158, 114);
+}
+
+#headerListItem a:visited {
+  color: rgb(92, 158, 114);
+}
+
+#headerListItem a:hover {
+  color:rgb(92, 158, 114); 
+}
+
+#headerListItem a:active {
+  color: rgb(92, 158, 114);
 }
 
 #errorMessage { 

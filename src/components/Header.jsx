@@ -10,22 +10,22 @@ const Header = () => {
 
   return (
     <header>
-      <img id="headerLogo" src="logoLumina.png" alt="imagen de logo" />
-      <nav>
-        <ul>
+      <p id="headerText">... Lumina ...</p>
+      <nav id="headerNav">
+        <ul id="headerMenu">
           {
             user && <>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/Dashboard">Dashboard</Link></li>
-              <li><Link to="/AboutUs">Sobre Nosotros</Link></li>
+              <li id="headerListItem"><Link to="/">Home</Link></li>
+              <li id="headerListItem"><Link to="/Dashboard">Dashboard</Link></li>
+              <li id="headerListItem"><Link to="/AboutUs">Sobre Nosotros</Link></li>
               <button onClick={handleLogout}>Cerrar sesión</button>
             </>
           }
           {
             !user && <>
-              <li><Link to="/login">Login</Link></li>
-              <li><Link to="/registrate">Registrate</Link></li>
-              <li><Link to="/AboutUs">Sobre Nosotros</Link></li>
+              <li id="headerListItem"><Link to="/login">Login</Link></li>
+              <li id="headerListItem"><Link to="/registrate">Registrate</Link></li>
+              <li id="headerListItem"><Link to="/AboutUs">Sobre Nosotros</Link></li>
             </>
           }
         </ul>
