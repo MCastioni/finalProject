@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer>
-      <p> © Sitio desarrollado con fines educativos.</p>
+      <p id="footer"> © Sitio desarrollado con fines educativos.</p>
     </footer>
   )
 }

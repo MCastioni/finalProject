@@ -4,14 +4,14 @@
   padding: 0%;
 }
 header {
-  background-image: url(headerPhoto.jpeg);
+  background-image: url(headerPhoto.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center; 
   justify-content: center;
-  height: 150px;
+  height: 250px;
 }
 
 #headerText {
@@ -21,6 +21,7 @@ header {
   color: white;
   font-size: 50px;
   text-align: center;
+  margin-top: 5%;
 }
 #headerNav {
   background-color: #ffffff;
@@ -58,6 +59,83 @@ header {
   color: rgb(92, 158, 114);
 }
 
+/* Login page */
+
+#loginTitle {
+  background-color: #ffffff;
+  text-align: center;
+  font-family: "Rakkas";
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(92, 158, 114);
+}
+.container {
+  background-image: url(loginPhoto.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+#loginCard { 
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3%;
+  box-shadow: 10px 10px 17px 0px rgba(133,128,128,0.6);
+  border-radius: 10px;
+}
+
+#loginCardTitle { 
+  background-color: #ffffff;
+  font-family: "Rakkas";
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(92, 158, 114);
+  margin-bottom: 20px;
+}
+
+#loginHeart { 
+  color: rgb(92, 158, 114);
+  font-family: "Rakkas";
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 20px;
+  font-size: 50px;
+}
+
+
+#loginText { 
+  color: rgb(92, 158, 114);
+  font-family: "Rakkas";
+  font-weight: 400;
+  font-style: normal;
+}
+
+#loginButton { 
+  background-color: rgb(92, 158, 114);
+  Margin-top: 10px;
+  width: 100%;
+  padding: 2%;
+  margin-top: 30px;
+  Border-radius: 10px;
+  border: none;
+  box-shadow: 10px 10px 17px 0px rgba(133,128,128,0.6);
+
+}
+
+
 #errorMessage { 
   color:brown
+}
+
+#footer { 
+  background-image: url(headerPhoto.png);
+  text-align: center;
+  color: white
 }

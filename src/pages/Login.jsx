@@ -28,28 +28,32 @@ const Login = () => {
 
   return (
     <Layout>
-      <h1>Inicia sesión</h1>
-
-      <section>
-        <h2>¡Bienvenido a Lumina!</h2>
+      <h1 id="loginTitle">¡Bienvenido a Lumina!</h1>
+      <div class="container">
+      <section id="loginCard">
+        <h2 id="loginCardTitle">Inicia sesion en LUMINA</h2>
+        <p id="loginHeart">❤</p>
         <form onSubmit={handleLogin}>
           <div>
-            <label>Nombre de usuario:</label>
+            <label id="loginText">Nombre de usuario:</label>
+            <div></div>
             <input
               type="text"
               onChange={(e) => setUsername(e.target.value)}
               value={username} />
           </div>
           <div>
-            <label>Contraseña:</label>
+            <label id="loginText" >Contraseña:</label>
+            <div></div>
             <input
               type="password"
               onChange={(e) => setPassword(e.target.value)}
               value={password} />
           </div>
-          <button>Ingresar</button>
+          <button id="loginButton">Ingresar</button>
         </form>
       </section>
+      </div>
     </Layout>
   )
 }
