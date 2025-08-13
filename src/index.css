@@ -3,6 +3,7 @@
   margin: 0%;
   padding: 0%;
 }
+
 header {
   background-image: url(headerPhoto.png);
   background-repeat: no-repeat;
@@ -168,7 +169,6 @@ header {
   margin-bottom: 20px;
 }
 
-
 #registerText { 
   color: rgb(92, 158, 114);
   font-family: "Rakkas";
@@ -194,21 +194,31 @@ header {
 }
 
 /* About US  */
-#aboutUsPage {
-  background-image: url(aboutUsPhoto.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
+#aboutUsTitle {
+  background-color: rgb(92, 158, 114);
+  text-align: center;
+  font-family: "Rakkas";
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  border-bottom: 2px solid rgb(92, 158, 114) ;
 }
 
+#aboutUsPage { 
+  height: 100vh;
+} 
+
 .aboutContainer {
-  background-color: #ffffff;
   margin: 3%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 100px 100px;
   grid-gap: 50px;
 }
 
 #aboutCard { 
+  border: 1px solid rgb(92, 158, 114);
+  border-radius: 15px;
   box-shadow: 10px 10px 17px 0px rgba(133,128,128,0.6);
   height: fit-content;
 }

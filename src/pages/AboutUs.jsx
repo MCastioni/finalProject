@@ -3,7 +3,8 @@ import { Layout } from "../components/Layout"
 const AboutUs = () => {
     return (
     <Layout>
-        <div id="aboutUsPage">
+        <h1 id="aboutUsTitle">Sobre Nosotros</h1>
+            <div id="aboutUsPage">
             <section class="aboutContainer">
             <section id="aboutCard">
                 <h2 id="aboutTitle"> ¿Qué es Lumina?</h2>

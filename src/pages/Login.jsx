@@ -17,8 +17,6 @@ const Login = () => {
     setError("")
     setSuccess("")
 
-    //derek
-    //jklg*_56
   if (!username || !password) {
     setError("Debes completar todos los campos")
     return
