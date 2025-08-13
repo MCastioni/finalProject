@@ -1,4 +1,3 @@
-
 import { useState } from "react"
 import { Layout } from "../components/Layout"
 import { useAuth } from "../context/UserContext"
@@ -7,23 +6,45 @@ import { useNavigate } from "react-router-dom"
 const Login = () => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
+  const [error, setError] = useState("")
+  const [success, setSuccess] = useState("")
   const { login } = useAuth()
 
   const nagivate = useNavigate()
 
   const handleLogin = async (e) => {
     e.preventDefault()
-    console.log({ username, password })
-    const isLogin = await login(username, password)
+    setError("")
+    setSuccess("")
 
+    //derek
+    //jklg*_56
+  if (!username || !password) {
+    setError("Debes completar todos los campos")
+    return
+  }
+
+  if (/\d/.test(username)) {
+    setError("El nombre de usuario no puede contener números")
+    return
+  }
+
+  if (/\s/.test(password)) {
+    setError("La contraseña no puede contener espacios")
+    return
+  }
+
+    const isLogin = await login({username, password})
+    
     if (isLogin) {
       setUsername("")
       setPassword("")
       nagivate("/")
     }
     else {
-      alert("Nombre de usuario o contraseña incorrectos")
+    alert("Nombre de usuario o contraseña incorrectos")
     }
+
   }
 
   return (
@@ -52,6 +73,11 @@ const Login = () => {
           </div>
           <button id="loginButton">Ingresar</button>
         </form>
+
+        {
+          error && <p id="errorMessage">{error}</p>
+        }
+
       </section>
       </div>
     </Layout>

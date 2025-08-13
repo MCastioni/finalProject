@@ -5,7 +5,7 @@ const UserContext = createContext()
 const UserProvider = (props) => {
   const [user, setUser] = useState(null)
 
-  const login = async (username, password) => {
+  const login = async ({username, password}) => {
     const response = await fetch("https://fakestoreapi.com/auth/login", {
       method: "POST",
       headers: {
