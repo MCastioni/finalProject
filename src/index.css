@@ -201,7 +201,6 @@ header {
   font-weight: 400;
   font-style: normal;
   color: white;
-  border-bottom: 2px solid rgb(92, 158, 114) ;
 }
 
 #aboutUsPage { 
@@ -238,7 +237,117 @@ header {
   margin: 20px;
 }
 
-/* footer  */
+/* home */
+#homeTitle {
+  background-color: rgb(92, 158, 114);
+  text-align: center;
+  font-family: "Rakkas";
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+}
+#homeSubtitle {
+  background-color: rgb(92, 158, 114);
+  text-align: center;
+  font-family: "Rakkas";
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  font-size: 12px;
+}
+
+#homeInfoTitle {
+  text-align: center;
+  font-family: "Rakkas";
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(92, 158, 114);
+}
+
+
+.homeInfoCard { 
+  border: 1px solid rgb(92, 158, 114);
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px 0px rgba(133,128,128,0.6);
+  height: fit-content;
+  margin: 3%;
+}
+
+#homeInfoContainer {
+  Display: flex;
+}
+
+.homeInfoCardTitle { 
+  font-family: "Rakkas";
+  font-weight: 400;
+  font-style: normal;
+  margin: 15px;
+  color: rgb(92, 158, 114);
+}
+
+.homeInfoCardText { 
+  font-family: "Rakkas";
+  color: rgb(70, 67, 67);
+  font-style: normal;
+  margin: 20px;
+}
+
+#homeProductsTitle {
+  background-color: rgb(92, 158, 114);
+  text-align: center;
+  font-family: "Rakkas";
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+}
+
+#homeProductsSubtitle {
+  background-color: rgb(92, 158, 114);
+  text-align: center;
+  font-family: "Rakkas";
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  font-size: 12px;
+}
+
+#homeSearchbarContainer {
+  display: flex;
+  justify-content: center;
+  background-color:rgb(92, 158, 114);
+}
+
+#homeSearchbar {
+  margin: 1%;
+  width: 50%;
+} 
+
+#homeGridContainer {
+  margin: 3%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 4fr));
+  grid-template-rows: repeat(auto-fill, minmax(300px, auto));
+  border: 2px solid red;
+  
+}
+
+#homeGridTitle {
+  text-align: center;
+  align-items: center;
+  font-family: "Rakkas";
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(92, 158, 114);
+} 
+
+#homeGridImg { 
+  width: 50%;
+}
+
+
+
+
+/* footer */
 #footer { 
   background-image: url(headerPhoto.png);
   text-align: center;

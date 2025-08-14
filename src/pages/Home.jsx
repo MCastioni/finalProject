@@ -99,38 +99,40 @@ const Home = () => {
   return (
     <Layout>
       <section>
-        <h1>Bienvenido a Nuestra Tienda</h1>
-        <p>Descubrí una selección exclusiva de productos para vos. Calidad, confianza y atención personalizada.</p>
+        <h1 id="homeTitle">Bienvenido a Nuestra Tienda</h1>
+        <p id="homeSubtitle">...Descubrí una selección exclusiva de productos para vos. Calidad, confianza y atención personalizada...</p>
       </section>
 
       <section>
-        <h2>¿Por qué elegirnos?</h2>
-        <ul>
-          <li>
-            <h3>Envíos a todo el país</h3>
-            <p>Recibí tu compra en la puerta de tu casa estés donde estés.</p>
-          </li>
-          <li>
-            <h3>Pagos seguros</h3>
-            <p>Trabajamos con plataformas que garantizan tu seguridad.</p>
-          </li>
-          <li>
-            <h3>Atención personalizada</h3>
-            <p>Estamos disponibles para ayudarte en todo momento.</p>
-          </li>
-        </ul>
+        <h2 id="homeInfoTitle">¿Por qué elegirnos?</h2>
+
+        <section id="homeInfoContainer">
+            <div class="homeInfoCard">
+            <h3 class="homeInfoCardTitle" >Envíos a todo el país</h3>
+            <p class="homeInfoCardText"> Recibí tu compra en la puerta de tu casa estés donde estés.</p>
+            </div>
+            <div class="homeInfoCard">
+            <h3 class="homeInfoCardTitle">Pagos seguros</h3>
+            <p class="homeInfoCardText">Trabajamos con plataformas que garantizan tu seguridad.</p>
+            </div>
+            <div class="homeInfoCard">
+            <h3 class="homeInfoCardTitle">Atención personalizada</h3>
+            <p  class="homeInfoCardText">Estamos disponibles para ayudarte en todo momento.</p>
+            </div>
+        </section>
       </section>
 
       <section>
-        <h2>Nuestros productos</h2>
-        <p>Elegí entre nuestras categorías más populares.</p>
-        <input onChange={onChangeinput} type="text" placeholder="Búsqueda..." />
-        
+        <h2 id="homeProductsTitle">Nuestros productos</h2>
+        <p id="homeProductsSubtitle"> Elegí entre nuestras categorías más populares.</p>
+        <div id="homeSearchbarContainer">
+        <input id="homeSearchbar" onChange={onChangeinput} type="text" placeholder="Búsqueda..." />
+        </div>
         {
           showPopup && <section className="popup-edit">
             <h2>Editando producto</h2>
             <form onSubmit={handleUpdate}>
-              <input
+              <input 
                 type="text"
                 placeholder="Ingrese el titulo"
                 value={titleEdit}
@@ -167,12 +169,14 @@ const Home = () => {
 
         <div>
           {
-            products.map((product) => <div key={product.id}>
-              <h2 key={product.id}>{product.title}</h2>
-              <img width="80px" src={product.image} alt={`Imagen de ${product.title}`} />
+            products.map((product) => <div  key={product.id}>
+              <div id="homeGridContainer">
+              <h2 id="homeGridTitle" key={product.id}>{product.title}</h2>
+              <img id="homeGridImg" src={product.image} alt={`Imagen de ${product.title}`} />
               <p>${product.price}</p>
               <p>{product.description}</p>
               <p><strong>{product.category}</strong></p>
+              </div>
               {
                 user && <div>
                   <button onClick={() => handleOpenEdit(product)}>Actualizar</button>
