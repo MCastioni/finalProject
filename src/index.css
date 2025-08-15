@@ -427,6 +427,52 @@ header {
   font-style: normal;
 }
 
+/* not found page */
+#notFoundPage {
+  background-image: url(headerPhoto.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+#notTitle {
+  background-color: #ffffff;
+  text-align: center;
+  font-family: "Rakkas";
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(92, 158, 114);
+}
+
+#notFoundContainer { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3%;
+  border-radius: 10px;
+}
+
+#notImg {
+  margin: 50px;
+}
+#notText { 
+  font-family: "Barriecito", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  font-size: 50px;
+}
+
+#notLink { 
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  font-size: 50px;
+  align-self: center;
+  margin-top: 200px;
+}
 
 /* footer */
 #footer {
