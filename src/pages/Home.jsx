@@ -107,17 +107,17 @@ const Home = () => {
         <h2 id="homeInfoTitle">¿Por qué elegirnos?</h2>
 
         <section id="homeInfoContainer">
-            <div class="homeInfoCard">
-            <h3 class="homeInfoCardTitle" >Envíos a todo el país</h3>
-            <p class="homeInfoCardText"> Recibí tu compra en la puerta de tu casa estés donde estés.</p>
+            <div className="homeInfoCard">
+            <h3 className="homeInfoCardTitle" >Envíos a todo el país</h3>
+            <p className="homeInfoCardText"> Recibí tu compra en la puerta de tu casa estés donde estés.</p>
             </div>
-            <div class="homeInfoCard">
-            <h3 class="homeInfoCardTitle">Pagos seguros</h3>
-            <p class="homeInfoCardText">Trabajamos con plataformas que garantizan tu seguridad.</p>
+            <div className="homeInfoCard">
+            <h3 className="homeInfoCardTitle">Pagos seguros</h3>
+            <p className="homeInfoCardText">Trabajamos con plataformas que garantizan tu seguridad.</p>
             </div>
-            <div class="homeInfoCard">
-            <h3 class="homeInfoCardTitle">Atención personalizada</h3>
-            <p  class="homeInfoCardText">Estamos disponibles para ayudarte en todo momento.</p>
+            <div className="homeInfoCard">
+            <h3 className="homeInfoCardTitle">Atención personalizada</h3>
+            <p  className="homeInfoCardText">Estamos disponibles para ayudarte en todo momento.</p>
             </div>
         </section>
       </section>
@@ -130,68 +130,97 @@ const Home = () => {
         </div>
         {
           showPopup && <section className="popup-edit">
-            <h2>Editando producto</h2>
-            <form onSubmit={handleUpdate}>
+            <h2 className="homeInfoCardTitle" >Editando producto</h2>
+             {/* <div id="homePopUp"> */}
+            <form id="homePopUp" onSubmit={handleUpdate}>
+
+              <p className="popUpText"> Title </p>
               <input 
                 type="text"
                 placeholder="Ingrese el titulo"
                 value={titleEdit}
                 onChange={(e) => setTitleEdit(e.target.value)}
               />
+              <br />
+
+              <p className="popUpText"> Price </p>
               <input
                 type="number"
                 placeholder="Ingrese el precio"
                 value={priceEdit}
                 onChange={(e) => setPriceEdit(e.target.value)}
               />
+              <br />
+
+              <p className="popUpText"> Description </p>
               <textarea
                 placeholder="Ingrese la descripción"
                 value={descriptionEdit}
                 onChange={(e) => setDescriptionEdit(e.target.value)}
               ></textarea>
+              <br />
+
+              <p className="popUpText"> Category </p>
               <input
                 type="text"
                 placeholder="Ingrese la categoria"
                 value={categoryEdit}
                 onChange={(e) => setCategoryEdit(e.target.value)}
               />
+              <br />
+
+              <p className="popUpText"> Picture </p>
               <input
                 type="text"
                 placeholder="Ingrese la URL de la imagen"
                 value={imageEdit}
                 onChange={(e) => setImageEdit(e.target.value)}
               />
-              <button onClick={() => setShowPopup(null)}>Cerrar</button>
-              <button>Actualizar</button>
+              <br />
+              <button className="buttons" onClick={() => setShowPopup(null)}>Cerrar</button>
+              <button className="buttons">Actualizar</button>
             </form>
           </section>
         }
 
-        <div>
+        <div id="homeSellingPage">
           {
-            products.map((product) => <div  key={product.id}>
-              <div id="homeGridContainer">
-              <h2 id="homeGridTitle" key={product.id}>{product.title}</h2>
-              <img id="homeGridImg" src={product.image} alt={`Imagen de ${product.title}`} />
-              <p>${product.price}</p>
-              <p>{product.description}</p>
-              <p><strong>{product.category}</strong></p>
-              </div>
+            products.map((product) => <div key={product.id}>
+                <section id="homeGridFull">
+                  <h2 id="homeGridTitle" key={product.id}>{product.title}</h2>
+                
+                <section id="homeGridInfo">
+                  <p id="homeGridCategory">{product.category}</p>
+                  <div id="homeGridButtonsID">
               {
-                user && <div>
-                  <button onClick={() => handleOpenEdit(product)}>Actualizar</button>
-                  <button onClick={() => handleDelete(product.id)}>Borrar</button>
+                user && 
+                <div>
+                  <button className="buttons" onClick={() => handleOpenEdit(product)}>Actualizar</button>
+                  <button className="buttons" onClick={() => handleDelete(product.id)}> Borrar</button>
                 </div>
               }
-            </div>)
+              </div>
+              </section>
+
+
+                  <div id="homeGridContainer">
+                    <img id="homeGridImg" src={product.image} alt={`Imagen de ${product.title}`} />
+                    <p id="homeGridDescription" >{product.description}</p>
+                  </div>
+                  <p id="homeGridPrice"d> ${product.price}</p>
+              </section>
+        </div>)
           }
+        <br />
+        <div id="homeProductsError">
           {
-            !products.lenght && (
+            !products.length && (
             <div><h3>Ups, parece que hubo un problema</h3>
-            <p id="errorMessage"> Tu producto "{value}" no existe o no es correcto.</p>
+            <p id="errorMessage"> Tu producto  no existe o no es correcto.</p>
             <p id="errorMessage"> Por favor, intenta nuevamente.</p></div>
             )
           }
+        </div>
         </div>
       </section>
     </Layout>

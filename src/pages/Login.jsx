@@ -48,7 +48,7 @@ const Login = () => {
   return (
     <Layout>
       <h1 id="loginTitle">¡Bienvenido de vuelta!</h1>
-      <div class="loginContainer">
+      <div className="loginContainer">
       <section id="loginCard">
         <h2 id="loginCardTitle">Inicia sesion en LUMINA</h2>
         <p id="loginHeart">❤</p>

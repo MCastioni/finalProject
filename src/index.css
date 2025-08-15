@@ -10,7 +10,7 @@ header {
   background-size: cover;
   background-position: center;
   display: flex;
-  align-items: center; 
+  align-items: center;
   justify-content: center;
   height: 200px;
 }
@@ -33,9 +33,9 @@ header {
   z-index: 100;
 }
 
-#headerMenu { 
+#headerMenu {
   Margin: 10px;
-  display: flex; 
+  display: flex;
   gap: 50px;
   list-style-type: none;
   font-family: "Rakkas";
@@ -53,7 +53,7 @@ header {
 }
 
 #headerListItem a:hover {
-  color:rgb(92, 158, 114); 
+  color:rgb(92, 158, 114);
 }
 
 #headerListItem a:active {
@@ -81,7 +81,7 @@ header {
   display: flex;
 }
 
-#loginCard { 
+#loginCard {
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -92,7 +92,7 @@ header {
   border-radius: 10px;
 }
 
-#loginCardTitle { 
+#loginCardTitle {
   background-color: #ffffff;
   font-family: "Rakkas";
   font-weight: 400;
@@ -101,7 +101,7 @@ header {
   margin-bottom: 20px;
 }
 
-#loginHeart { 
+#loginHeart {
   color: rgb(92, 158, 114);
   font-family: "Rakkas";
   font-weight: 400;
@@ -110,14 +110,25 @@ header {
   font-size: 50px;
 }
 
-#loginText { 
+#loginText {
   color: rgb(92, 158, 114);
   font-family: "Rakkas";
   font-weight: 400;
   font-style: normal;
 }
 
-#loginButton { 
+.buttons {
+  background-color: rgb(92, 158, 114);
+  margin: 5px;
+  padding: 3px;
+  font-family: "Rakkas";
+  font-weight: 400;
+  font-style: normal;
+  color: #000000;
+
+}
+
+#loginButton {
   background-color: rgb(92, 158, 114);
   Margin-top: 10px;
   width: 100%;
@@ -149,7 +160,7 @@ header {
   display: flex;
 }
 
-#registerCard { 
+#registerCard {
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -160,7 +171,7 @@ header {
   border-radius: 10px;
 }
 
-#registerCardTitle { 
+#registerCardTitle {
   background-color: #ffffff;
   font-family: "Rakkas";
   font-weight: 400;
@@ -169,14 +180,14 @@ header {
   margin-bottom: 20px;
 }
 
-#registerText { 
+#registerText {
   color: rgb(92, 158, 114);
   font-family: "Rakkas";
   font-weight: 400;
   font-style: normal;
 }
 
-#registerButton { 
+#registerButton {
   background-color: rgb(92, 158, 114);
   Margin-top: 10px;
   width: 100%;
@@ -187,7 +198,7 @@ header {
   box-shadow: 10px 10px 17px 0px rgba(133,128,128,0.6);
 }
 
-#errorMessage { 
+#errorMessage {
   color:rgb(223, 7, 7);
   margin-top: 20px;
 
@@ -203,9 +214,9 @@ header {
   color: white;
 }
 
-#aboutUsPage { 
+#aboutUsPage {
   height: 100vh;
-} 
+}
 
 .aboutContainer {
   margin: 3%;
@@ -215,14 +226,14 @@ header {
   grid-gap: 50px;
 }
 
-#aboutCard { 
+#aboutCard {
   border: 1px solid rgb(92, 158, 114);
   border-radius: 15px;
   box-shadow: 10px 10px 17px 0px rgba(133,128,128,0.6);
   height: fit-content;
 }
 
-#aboutTitle { 
+#aboutTitle {
   font-family: "Rakkas";
   font-weight: 400;
   font-style: normal;
@@ -230,7 +241,7 @@ header {
   margin: 15px;
 }
 
-#aboutText { 
+#aboutText {
   font-family: "Rakkas";
   color: rgb(70, 67, 67);
   font-style: normal;
@@ -246,6 +257,7 @@ header {
   font-style: normal;
   color: white;
 }
+
 #homeSubtitle {
   background-color: rgb(92, 158, 114);
   text-align: center;
@@ -264,8 +276,7 @@ header {
   color: rgb(92, 158, 114);
 }
 
-
-.homeInfoCard { 
+.homeInfoCard {
   border: 1px solid rgb(92, 158, 114);
   border-radius: 15px;
   box-shadow: 5px 5px 5px 0px rgba(133,128,128,0.6);
@@ -277,7 +288,7 @@ header {
   Display: flex;
 }
 
-.homeInfoCardTitle { 
+.homeInfoCardTitle {
   font-family: "Rakkas";
   font-weight: 400;
   font-style: normal;
@@ -285,7 +296,7 @@ header {
   color: rgb(92, 158, 114);
 }
 
-.homeInfoCardText { 
+.homeInfoCardText {
   font-family: "Rakkas";
   color: rgb(70, 67, 67);
   font-style: normal;
@@ -320,36 +331,106 @@ header {
 #homeSearchbar {
   margin: 1%;
   width: 50%;
-} 
+}
 
-#homeGridContainer {
+#homeSellingPage {
+  Display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#homeGridFull {
+  border: 2px solid rgb(2, 20, 8);
+  height: 100%;
+  width: auto;
   margin: 3%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 4fr));
-  grid-template-rows: repeat(auto-fill, minmax(300px, auto));
-  border: 2px solid red;
-  
 }
 
 #homeGridTitle {
+  background-color: #ffffff;
   text-align: center;
   align-items: center;
   font-family: "Rakkas";
   font-weight: 400;
   font-style: normal;
   color: rgb(92, 158, 114);
-} 
+  border-bottom: 2px solid rgb(92, 158, 114);
+}
 
-#homeGridImg { 
+#homeGridInfo {
+  display: flex;
+  border-bottom: 2px solid rgb(92, 158, 114);
+  padding: 10px;
+  justify-content: center;
+}
+
+#homeGridCategory {
+  font-family: "Rakkas";
+  color: rgb(92, 158, 114);
+  font-style: normal;
+  margin-right: 20px;
+}
+
+#homeGridButtonsID {
+  display: flex;
+}
+
+.homeGridButtons {
+  background-color: rgb(92, 158, 114);
+  border: none;
+  border-radius: 13%;
+  margin: 5px;
+  margin-left: 25px;
+  padding: 8px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 800;
+  color: rgb(255, 255, 255);
+}
+
+#homeGridImg {
   width: 50%;
+  margin: 10%;
+  align-self: center;
+}
+
+#homeGridDescription {
+  text-align: center;
+  font-family: "georgia";
+  color: rgb(92, 158, 114);
+  font-style: normal;
+  margin: 5%
+}
+
+#homeGridPrice {
+  font-family: "Rakkas";
+  font-size: 30px;
+  color: rgb(92, 158, 114);
+  font-style: normal;
+  text-align: center;
+}
+
+#homeProductsError {
+  margin: 20px;
+}
+
+#homePopUp {
+  margin: 3%;
+  padding: 3%;
+  border: 2px solid rgb(2, 20, 8);
+  box-shadow: 10px 10px 17px 0px rgba(133,128,128,0.6);
+}
+
+.popUpText {
+  color: rgb(92, 158, 114);
+  font-family: "Rakkas";
+  font-size: 30px;
+  color: rgb(92, 158, 114);
+  font-style: normal;
 }
 
 
-
-
 /* footer */
-#footer { 
+#footer {
   background-image: url(headerPhoto.png);
   text-align: center;
-  color: white
+  color: white;
 }

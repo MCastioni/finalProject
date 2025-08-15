@@ -52,7 +52,7 @@ const Register = () => {
   return (
     <Layout>
       <h1 id="registerTitle">¡Únete a nuestra comunidad!</h1>
-      <div class="registerContainer">
+      <div className="registerContainer">
       <section id="registerCard">
         <h2 id="registerCardTitle" > Crea tu cuenta LUMINA </h2>
         <form onSubmit={handleSubmit}>

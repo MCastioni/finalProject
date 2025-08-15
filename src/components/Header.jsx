@@ -18,7 +18,7 @@ const Header = () => {
               <li id="headerListItem"><Link to="/">Home</Link></li>
               <li id="headerListItem"><Link to="/Dashboard">Dashboard</Link></li>
               <li id="headerListItem"><Link to="/AboutUs">Sobre Nosotros</Link></li>
-              <button onClick={handleLogout}>Cerrar sesión</button>
+              <button className="buttons" onClick={handleLogout}>Cerrar sesión</button>
             </>
           }
           {
