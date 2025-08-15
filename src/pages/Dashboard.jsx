@@ -60,23 +60,25 @@ const Dashboard = () => {
 
   return (
     <Layout>
-      <h1>Panel de Administración</h1>
+      <h1 id="dashboardTitle">Panel de Administración</h1>
 
       <section>
-        <h2>Cargar nuevo producto</h2>
-        <form onSubmit={handleSubmit}>
+        <form className="dashboardPanel" onSubmit={handleSubmit}>
+          <h2 class="dashboardText">Cargar nuevo producto</h2>
           <div>
-            <label>Nombre del producto:</label>
+            <label class="dashboardText">Nombre del producto:</label>
+            <br />
             <input type="text" name="nombre" onChange={(e) => setName(e.target.value)} value={name} />
           </div>
-
           <div>
-            <label>Precio:</label>
+            <label class="dashboardText">Precio:</label>
+            <br />
             <input type="number" name="precio" onChange={(e) => setPrice(e.target.value)} value={price} />
           </div>
 
           <div>
-            <label>Descripción:</label>
+            <label class="dashboardText">Descripción:</label>
+            <br />
             <textarea name="descripcion" rows="4" onChange={(e) => setDescription(e.target.value)} value={description} />
           </div>
 
@@ -84,7 +86,7 @@ const Dashboard = () => {
             error && <p className="error">{error}</p>
           }
 
-          <button>Guardar producto</button>
+          <button class="buttons">Guardar producto</button>
         </form>
 
         {
